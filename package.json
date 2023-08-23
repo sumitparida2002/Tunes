@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.1",
+    "@pothos/core": "^3.33.0",
+    "@pothos/plugin-prisma": "^3.57.0",
+    "@pothos/plugin-relay": "^3.43.1",
+    "@prisma/client": "^5.2.0",
     "@types/node": "20.5.3",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
+    "graphql": "^16.8.0",
+    "graphql-yoga": "^4.0.4",
     "next": "13.4.19",
     "postcss": "8.4.28",
     "react": "18.2.0",
@@ -23,6 +30,10 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "prisma": "^5.2.0"
+    "prisma": "^5.2.0",
+    "ts-node": "^10.9.1"
+  },
+  "prisma": {
+    "seed": "ts-node --transpile-only ./prisma/seed.ts"
   }
 }
