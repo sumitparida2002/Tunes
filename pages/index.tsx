@@ -4,16 +4,7 @@ import { gql, useQuery,useMutation } from '@apollo/client'
 import type { Song } from '@prisma/client'
 
 const inter = Inter({ subsets: ['latin'] })
-// const AllSongsQuery = gql`
-//   query {
-//     songs {
-//       id
-//       name
-//       artist
-//       thumbnail
 
-//     }
-//   }`
 
 
 const AllSongsQuery=gql`
@@ -82,7 +73,7 @@ export default function Home() {
           </button>
         ) : (
           <p className="my-10 text-center font-medium">
-            You've reached the end!{" "}
+            You&apos;ve reached the end!{" "}
           </p>
         )}
       </div>
