@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { gql, useQuery,useMutation } from '@apollo/client'
 import type { Song } from '@prisma/client'
+import Card from '@/components/Card'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,14 +44,15 @@ export default function Home() {
      <div className="container mx-auto max-w-5xl my-20">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {data.songs.edges.map(({node}: {node:Song}) => (
-            <li key={node.id} className="shadow  max-w-md  rounded">
-              <img className="shadow-sm" src={node.thumbnail? "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Taylor_Swift_-_1989.png/220px-Taylor_Swift_-_1989.png":''} />
-              <div className="p-5 flex flex-col space-y-2">
-              <p className="text-lg font-medium">{node.name}</p>
-                <p className="text-sm text-blue-500">{node.artist}</p>
+            <Card props={node} />
+            // <li key={node.id} className="shadow  max-w-md  rounded">
+            //   <img className="shadow-sm" src={node.thumbnail? "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Taylor_Swift_-_1989.png/220px-Taylor_Swift_-_1989.png":''} />
+            //   <div className="p-5 flex flex-col space-y-2">
+            //   <p className="text-lg font-medium">{node.name}</p>
+            //     <p className="text-sm text-blue-500">{node.artist}</p>
 
-              </div>
-            </li>
+            //   </div>
+            // </li>
           ))}
         </ul>
         {hasNextPage ? (
