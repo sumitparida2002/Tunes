@@ -47,9 +47,9 @@ export default function Home() {
     >
       <div className="container max-w-5xl mx-[2rem] my-[1rem]">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-          {data.songs.edges.map(({ node }: { node: Song }) => (
+          {data.songs.edges.map(({ node }: { node: Song }, index: any) => (
             <Link href="/content">
-              <Card props={node} />
+              <Card key={index} props={node} />
             </Link>
           ))}
         </ul>
