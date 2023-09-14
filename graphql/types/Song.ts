@@ -7,7 +7,7 @@ builder.prismaObject("Song", {
     name: t.exposeString("name"),
     thumbnail: t.exposeString("thumbnail", { nullable: true }),
     artist: t.exposeStringList("artist"),
-    playlist: t.relation("Playlist", { nullable: true }),
+    // playlist: t.relation("Playlist", { nullable: true }),
   }),
 });
 
