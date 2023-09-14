@@ -10,7 +10,8 @@ const ErrorPage = (props: any) => {
             {props.props.error.message}
           </h1>
           <p className="mt-4 text-gray-500 dark:text-gray-400">
-            Sorry, the page you are looking for doesn't exist or has been moved.
+            Sorry, the page you are looking for does not exist or has been
+            moved.
           </p>
 
           <div className="flex items-center mt-6 gap-x-3">
